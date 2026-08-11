@@ -83,7 +83,7 @@ const Services = () => {
       image: "https://i.postimg.cc/xCBKNGNh/cr5.jpg",
       badge: "OFFICIAL WPT TURF",
       tagline: "World Padel Tour Quality Padel Courts",
-      description: "Mondo artificial turf — the official turf of the World Padel Tour (WPT). Engineered for world-class ball bounce, optimal traction, and elite tournament performance.",
+      description: "world padel tour quality padel courts - Mondo, Official turf of WPT",
       features: [
         "Mondo Artificial Turf (Official Turf of WPT)",
         "World Padel Tour Grade Quality",
@@ -96,7 +96,7 @@ const Services = () => {
       image: "https://i.postimg.cc/Pq3bTnXG/cr3.jpg",
       badge: "US OPEN VERIFIED",
       tagline: "8 Layer Cushion Bitumen System",
-      description: "8 Layer pickleball courts built with bitumen for softer impact on joints. Professional Laykold acrylic material, US Open verified — all custom color combinations available.",
+      description: "8 Layer pickleball courts with bitumen for softer impact on joints. Professional laykold material, US open verified - all colors available",
       features: [
         "8-Layer Bitumen Cushion (Softer Impact on Joints)",
         "Professional Laykold Acrylic Surface Material",
@@ -265,43 +265,47 @@ const Services = () => {
                 </div>
 
                 {/* Content */}
-                <div className="flex flex-col items-start">
-                  <span className="text-reserve-accent text-[11px] font-black tracking-[0.3em] uppercase mb-2">
-                    {service.tagline}
-                  </span>
-                  <h3
-                    className="text-4xl md:text-5xl font-black uppercase italic tracking-tighter mb-6 text-white leading-none"
-                    style={{ fontFamily: "'Inter', sans-serif" }}
-                  >
-                    {service.title}
-                  </h3>
+                <div className="flex flex-col justify-between flex-1 w-full">
+                  <div className="flex flex-col items-start mb-8">
+                    <span className="text-reserve-accent text-[11px] font-black tracking-[0.3em] uppercase mb-2">
+                      {service.tagline}
+                    </span>
+                    <h3
+                      className="text-4xl md:text-5xl font-black uppercase italic tracking-tighter mb-6 text-white leading-none"
+                      style={{ fontFamily: "'Inter', sans-serif" }}
+                    >
+                      {service.title}
+                    </h3>
 
-                  <p className="text-white/60 text-sm md:text-base leading-relaxed mb-8 font-medium">
-                    {service.description}
-                  </p>
-
-                  {/* Feature Bullet Points */}
-                  <div className="w-full space-y-3 mb-10 pt-4 border-t border-white/10">
-                    {service.features.map((feat, fIdx) => (
-                      <div key={fIdx} className="flex items-center gap-3 text-xs md:text-sm text-white/80 font-bold uppercase tracking-wide">
-                        <Check size={16} className="text-reserve-accent flex-shrink-0" />
-                        <span>{feat}</span>
-                      </div>
-                    ))}
+                    <p className="text-white/60 text-sm md:text-base leading-relaxed font-medium">
+                      {service.description}
+                    </p>
                   </div>
 
-                  {/* Build Your Court Now Button */}
-                  <button
-                    onClick={() => scrollToForm(service.title)}
-                    className="w-full py-4 px-8 bg-white/5 hover:bg-reserve-accent text-white rounded-2xl border border-white/10 hover:border-reserve-accent flex items-center justify-between transition-all group/btn cursor-pointer"
-                  >
-                    <span className="text-[11px] font-black uppercase tracking-[0.3em] transition-colors">
-                      Build Your Court Now
-                    </span>
-                    <div className="w-9 h-9 rounded-full bg-white/10 group-hover/btn:bg-white text-white group-hover/btn:text-black flex items-center justify-center transition-all">
-                      <ArrowRight size={16} className="group-hover/btn:scale-110 transition-transform" />
+                  <div className="w-full">
+                    {/* Feature Bullet Points */}
+                    <div className="w-full space-y-3 mb-10 pt-4 border-t border-white/10">
+                      {service.features.map((feat, fIdx) => (
+                        <div key={fIdx} className="flex items-center gap-3 text-xs md:text-sm text-white/80 font-bold uppercase tracking-wide">
+                          <Check size={16} className="text-reserve-accent flex-shrink-0" />
+                          <span>{feat}</span>
+                        </div>
+                      ))}
                     </div>
-                  </button>
+
+                    {/* Build Your Court Now Button */}
+                    <button
+                      onClick={() => scrollToForm(service.title)}
+                      className="w-full py-4 px-8 bg-white/5 hover:bg-reserve-accent text-white rounded-2xl border border-white/10 hover:border-reserve-accent flex items-center justify-between transition-all group/btn cursor-pointer"
+                    >
+                      <span className="text-[11px] font-black uppercase tracking-[0.3em] transition-colors">
+                        Build Your Court Now
+                      </span>
+                      <div className="w-9 h-9 rounded-full bg-white/10 group-hover/btn:bg-white text-white group-hover/btn:text-black flex items-center justify-center transition-all">
+                        <ArrowRight size={16} className="group-hover/btn:scale-110 transition-transform" />
+                      </div>
+                    </button>
+                  </div>
                 </div>
               </motion.div>
             ))}
