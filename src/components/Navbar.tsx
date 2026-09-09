@@ -26,9 +26,22 @@ const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
   
-  // Pages that feature a hero and should start with a transparent navbar
   const pagesWithHero = ["/", "/contact", "/clubs", "/services", "/our-story"];
   const isTransparentPage = pagesWithHero.includes(location.pathname);
+
+  const handleNavClick = (e: React.MouseEvent, link: typeof navLinks[0]) => {
+    if (link.id === "services") {
+      e.preventDefault();
+      if (location.pathname === "/services") {
+        window.dispatchEvent(new CustomEvent("open-services-inquiry"));
+      } else {
+        navigate("/services", { state: { openInquiry: true } });
+      }
+      if (isMobileMenuOpen) setIsMobileMenuOpen(false);
+    } else {
+      if (isMobileMenuOpen) setIsMobileMenuOpen(false);
+    }
+  };
 
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled || !isTransparentPage ? "bg-black/95 backdrop-blur-md py-0" : "bg-transparent py-0"}`}>
@@ -50,6 +63,7 @@ const Navbar = () => {
             <Link
               key={link.name}
               to={link.path}
+              onClick={(e) => handleNavClick(e, link)}
               className={`text-[12px] xl:text-[13px] uppercase tracking-[0.2em] xl:tracking-[0.25em] font-black transition-all cursor-pointer whitespace-nowrap ${location.pathname === link.path ? "text-reserve-accent opacity-100" : "text-white/60 hover:text-white hover:opacity-100"}`}
             >
               {link.name}
@@ -92,8 +106,8 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.path}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-3xl uppercase tracking-widest font-serif text-left block"
+                onClick={(e) => handleNavClick(e, link)}
+                className="text-3xl uppercase tracking-widest font-sans font-bold text-left block"
               >
                 {link.name}
               </Link>

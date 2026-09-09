@@ -1,21 +1,53 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "motion/react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { MapPin, ArrowRight, Globe, Check, Send } from "lucide-react";
+import ServiceInquiryModal from "../components/ServiceInquiryModal";
 
 /**
  * SERVICES PAGE: COMPREHENSIVE COURT SOLUTIONS
- * Combined Design: User-requested services + Technical Expertise + Global Leadership + Embedded Inquiry Form
+ * Combined Design: User-requested services + Technical Expertise + Global Leadership + Pop-up Form Modal
  */
 
 const Services = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const heroRef = useRef<HTMLElement>(null);
   const formRef = useRef<HTMLElement>(null);
   const { scrollY } = useScroll();
 
   const y = useTransform(scrollY, [0, 500], [0, 150]);
   const opacity = useTransform(scrollY, [0, 400], [1, 0]);
+
+  // Modal Pop-up State
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalService, setModalService] = useState("Padel Courts");
+
+  const openInquiryModal = (serviceTitle?: string) => {
+    if (serviceTitle) {
+      setModalService(serviceTitle);
+    }
+    setIsModalOpen(true);
+  };
+
+  useEffect(() => {
+    const handleOpenEvent = (e: Event) => {
+      const customEvent = e as CustomEvent;
+      if (customEvent.detail?.service) {
+        setModalService(customEvent.detail.service);
+      }
+      setIsModalOpen(true);
+    };
+    window.addEventListener("open-services-inquiry", handleOpenEvent);
+
+    if (location.state?.openInquiry || location.search.includes("inquiry=true")) {
+      setIsModalOpen(true);
+    }
+
+    return () => {
+      window.removeEventListener("open-services-inquiry", handleOpenEvent);
+    };
+  }, [location]);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -29,9 +61,9 @@ const Services = () => {
 
   const scrollToForm = (serviceTitle?: string) => {
     if (serviceTitle) {
-      setFormData((prev) => ({ ...prev, service: serviceTitle }));
+      setModalService(serviceTitle);
     }
-    formRef.current?.scrollIntoView({ behavior: "smooth" });
+    setIsModalOpen(true);
   };
 
   const validateForm = () => {
@@ -317,10 +349,11 @@ const Services = () => {
       <section className="py-24 md:py-48 bg-[#0a0a0a] px-6 md:px-12 border-t border-white/5">
         <div className="max-w-[1400px] mx-auto">
           <h3 className="text-center text-reserve-accent text-[11px] font-black tracking-[0.6em] mb-24">REGIONAL HUBS</h3>
-          <div className="flex flex-wrap justify-center gap-10 max-w-5xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-10 max-w-7xl mx-auto">
             {[
               { name: "THE PAD GULMOHAR", location: "South Delhi", address: "Gulmohar Park New Delhi India" },
-              { name: "The Pad Goa", location: "Goa", address: "Goa India", comingSoon: true }
+              { name: "The Pad Goa", location: "Goa", address: "Goa India", comingSoon: true },
+              { name: "The Pad Indore", location: "Indore", address: "Indore India", comingSoon: true }
             ].map((loc, idx) => (
               <motion.div
                 key={idx}
@@ -329,7 +362,7 @@ const Services = () => {
                 viewport={{ once: true }}
                 variants={verticalRevealVariants}
                 custom={idx}
-                className="group relative bg-zinc-950 p-12 rounded-[2rem] border border-white/5 hover:border-reserve-accent/50 transition-all duration-500 overflow-hidden w-full md:w-[440px] max-w-lg"
+                className="group relative bg-zinc-950 p-12 rounded-[2rem] border border-white/5 hover:border-reserve-accent/50 transition-all duration-500 overflow-hidden w-full md:w-[380px] lg:w-[400px] max-w-lg flex flex-col justify-between"
               >
                 {loc.comingSoon && (
                   <span className="absolute top-8 right-8 bg-[#FF6A00] text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-wider transform rotate-3 shadow-lg z-20 whitespace-nowrap">
@@ -564,6 +597,14 @@ const Services = () => {
           LEGACY
         </div>
       </section>
+
+      {/* Pop-up Inquiry Form Modal */}
+      <ServiceInquiryModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onOpen={() => setIsModalOpen(true)}
+        defaultService={modalService}
+      />
 
     </div>
   );

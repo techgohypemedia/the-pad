@@ -7,7 +7,7 @@ const OurStory = () => {
   return (
     <div className="bg-black text-white min-h-screen flex flex-col">
       {/* Hero Section */}
-      <section className="px-6 pt-24 sm:pt-32 md:pt-48 pb-6 md:pb-12 text-center max-w-[1400px] mx-auto transition-all">
+      <section className="px-6 pt-28 sm:pt-32 md:pt-40 pb-32 md:pb-60 text-center max-w-[1400px] mx-auto transition-all">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -26,7 +26,7 @@ const OurStory = () => {
             className="max-w-4xl mx-auto space-y-4 md:space-y-6"
           >
             <p className="text-sm sm:text-base md:text-lg text-white/70 leading-relaxed font-medium">
-              The Pad is pioneering a new sports culture across India by creating players, fans, and communities. Featuring world-class Padel and Pickleball courts across locations, this community built on and around the court showcases the world’s newest, most exciting games. Through our clubs and tournaments in Delhi, Goa, and upcoming destinations, The Pad is driving India’s Padel and Pickleball revolution.
+              The Pad is pioneering a new sports culture across India by creating players, fans, and communities. Featuring world-class Padel and Pickleball courts across locations, this community built on and around the court showcases the world’s newest, most exciting games. Through our clubs and tournaments in Delhi, Goa, Indore, and upcoming destinations, The Pad is driving India’s Padel and Pickleball revolution.
             </p>
           </motion.div>
         </motion.div>
@@ -129,25 +129,24 @@ const ScrollStatementSection = () => {
   const containerRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start 85%", "end end"],
+    offset: ["start 90%", "end 60%"],
   });
 
-  const scaleX = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
+  const scaleX = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
 
-  // Words reveal sequentially with minimal scroll gap
-  const opacity1 = useTransform(scrollYProgress, [0, 0.25], [0.2, 1]);
-  const y1 = useTransform(scrollYProgress, [0, 0.25], [20, 0]);
+  const opacity1 = useTransform(scrollYProgress, [0, 0.3], [0.4, 1]);
+  const y1 = useTransform(scrollYProgress, [0, 0.3], [15, 0]);
 
-  const opacity2 = useTransform(scrollYProgress, [0.15, 0.4], [0, 1]);
-  const y2 = useTransform(scrollYProgress, [0.15, 0.4], [20, 0]);
+  const opacity2 = useTransform(scrollYProgress, [0.1, 0.45], [0.2, 1]);
+  const y2 = useTransform(scrollYProgress, [0.1, 0.45], [15, 0]);
 
-  const opacity3 = useTransform(scrollYProgress, [0.3, 0.55], [0, 1]);
-  const y3 = useTransform(scrollYProgress, [0.3, 0.55], [20, 0]);
+  const opacity3 = useTransform(scrollYProgress, [0.2, 0.6], [0.2, 1]);
+  const y3 = useTransform(scrollYProgress, [0.2, 0.6], [15, 0]);
 
   return (
-    <section ref={containerRef} className="relative py-8 md:py-0 md:h-[110vh] bg-black">
-      <div className="md:sticky md:top-0 md:h-screen w-full flex flex-col justify-center px-6 md:px-12 overflow-hidden">
-        <div className="max-w-[1400px] mx-auto w-full relative pt-4 md:pt-12">
+    <section ref={containerRef} className="relative pt-12 md:pt-24 pb-24 md:pb-44 bg-black">
+      <div className="w-full px-6 md:px-12">
+        <div className="max-w-[1400px] mx-auto w-full relative pt-6">
           {/* The Growing Line */}
           <motion.div
             className="absolute top-0 left-0 h-[1.5px] bg-white w-full origin-left"
@@ -155,7 +154,7 @@ const ScrollStatementSection = () => {
           />
 
           {/* Three Columns */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 pt-6 md:pt-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 pt-8">
             <motion.div style={{ opacity: opacity1, y: y1 }} className="flex flex-col">
               <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold uppercase tracking-[-0.04em] leading-[1.0] md:leading-[0.9] text-white">
                 THE PAD IS <br className="hidden sm:block" /> THE FUTURE OF PADEL
