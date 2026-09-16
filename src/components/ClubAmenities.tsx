@@ -43,12 +43,61 @@ const ClubAmenities = () => {
   }, []);
 
   const amenities = [
-    { text: "Padel\nCourts" },
-    { text: "Pickleball\nCourts" },
-    { text: "Gulmohar Park\nSetting" },
-    { text: "Professional\nCoaching" },
-    { text: "Friendly\nLeagues" },
-    { text: "Community\nLeagues" },
+    {
+      text: "Padel\nCourts",
+      pattern: (
+        <>
+          <circle cx="32" cy="32" r="10" />
+          <line x1="32" y1="1" x2="32" y2="63" />
+          <line x1="1" y1="32" x2="32" y2="32" />
+          <path d="M32 32 A 31 31 0 0 1 63 32" stroke="currentColor" />
+        </>
+      )
+    },
+    {
+      text: "Pickleball\nCourts",
+      pattern: (
+        <>
+          <circle cx="32" cy="32" r="22" />
+          <circle cx="32" cy="32" r="10" />
+          <line x1="1" y1="32" x2="63" y2="32" />
+        </>
+      )
+    },
+    {
+      text: "Professional\nCoaching",
+      pattern: (
+        <>
+          <circle cx="32" cy="32" r="12" />
+          <line x1="32" y1="1" x2="32" y2="63" />
+          <line x1="1" y1="32" x2="63" y2="32" />
+          <path d="M32 1 A 31 31 0 0 1 63 32" />
+        </>
+      )
+    },
+    {
+      text: "Friendly\nLeagues",
+      pattern: (
+        <>
+          <circle cx="32" cy="32" r="18" />
+          <circle cx="32" cy="32" r="8" />
+          <line x1="32" y1="1" x2="32" y2="63" />
+          <line x1="1" y1="32" x2="63" y2="32" />
+        </>
+      )
+    },
+    {
+      text: "Community\nLeagues",
+      pattern: (
+        <>
+          <circle cx="32" cy="32" r="12" />
+          <line x1="20" y1="5" x2="20" y2="59" />
+          <line x1="44" y1="5" x2="44" y2="59" />
+          <line x1="5" y1="20" x2="59" y2="20" />
+          <line x1="5" y1="44" x2="59" y2="44" />
+        </>
+      )
+    }
   ];
 
   return (
@@ -85,7 +134,7 @@ const ClubAmenities = () => {
             <div className="absolute top-[-5px] w-[1px] h-[11px] bg-[#f0ece2]" style={{ left: `${stampProgress}%`, transform: 'translateX(-50%)' }} />
           </div>
 
-          <div className="relative z-20 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-12 justify-items-center w-full pt-8 md:pt-16">
+          <div className="relative z-20 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-12 justify-items-center w-full pt-8 md:pt-16">
             {amenities.map((item, index) => (
               <div key={index} className="flex flex-col items-center w-32">
                 <div
@@ -97,55 +146,7 @@ const ClubAmenities = () => {
                   >
                     {/* Outer Circle (common to all) */}
                     <circle cx="32" cy="32" r="31" />
-
-                    {/* Unique Inner Patterns based on index */}
-                    {index === 0 && ( // New Equipment
-                      <>
-                        <circle cx="32" cy="32" r="10" />
-                        <line x1="32" y1="1" x2="32" y2="63" />
-                        <line x1="1" y1="32" x2="32" y2="32" />
-                        <path d="M32 32 A 31 31 0 0 1 63 32" stroke="currentColor" />
-                      </>
-                    )}
-                    {index === 1 && ( // Showers
-                      <>
-                        <circle cx="32" cy="32" r="22" />
-                        <circle cx="32" cy="32" r="10" />
-                        <line x1="1" y1="32" x2="63" y2="32" />
-                      </>
-                    )}
-                    {index === 2 && ( // Coffee
-                      <>
-                        <circle cx="32" cy="32" r="14" />
-                        <line x1="1" y1="22" x2="63" y2="22" />
-                        <line x1="1" y1="42" x2="63" y2="42" />
-                      </>
-                    )}
-                    {index === 3 && ( // Juice Bar
-                      <>
-                        <circle cx="32" cy="32" r="12" />
-                        <line x1="32" y1="1" x2="32" y2="63" />
-                        <line x1="1" y1="32" x2="63" y2="32" />
-                        <path d="M32 1 A 31 31 0 0 1 63 32" />
-                      </>
-                    )}
-                    {index === 4 && ( // Cold Plunge
-                      <>
-                        <circle cx="32" cy="32" r="18" />
-                        <circle cx="32" cy="32" r="8" />
-                        <line x1="32" y1="1" x2="32" y2="63" />
-                        <line x1="1" y1="32" x2="63" y2="32" />
-                      </>
-                    )}
-                    {index === 5 && ( // Sauna
-                      <>
-                        <circle cx="32" cy="32" r="12" />
-                        <line x1="20" y1="5" x2="20" y2="59" />
-                        <line x1="44" y1="5" x2="44" y2="59" />
-                        <line x1="5" y1="20" x2="59" y2="20" />
-                        <line x1="5" y1="44" x2="59" y2="44" />
-                      </>
-                    )}
+                    {item.pattern}
                   </svg>
                 </div>
                 <div className="text-center whitespace-pre-line text-[11px] md:text-[12px] font-bold tracking-wide uppercase" style={{ color: '#FF6A00', lineHeight: 1.4, fontFamily: 'sans-serif' }}>
