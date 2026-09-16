@@ -440,10 +440,6 @@ const Contact = () => {
                         <option value="" disabled>SELECT SERVICE</option>
                         <option value="Padel Courts">Padel Courts</option>
                         <option value="Pickleball Courts">Pickleball Courts</option>
-                        <option value="Tennis Courts">Tennis Courts</option>
-                        <option value="Cricket & Football Turf">Cricket & Football Turf</option>
-                        <option value="Basketball Courts">Basketball Courts</option>
-                        <option value="Badminton Courts">Badminton Courts</option>
                         <option value="General Inquiry">General Inquiry</option>
                       </select>
                     </div>

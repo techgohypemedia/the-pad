@@ -13,7 +13,7 @@ const Home = () => {
       <LatestNews />
       {/* <ElevateSection /> */}
       {/* <MeetThePros /> */}
-      <ClubAmenities />
+      {/* <ClubAmenities /> */}
       <ParallaxImageSection />
       {/* <BecomeAMemberSection /> */}
     </>
