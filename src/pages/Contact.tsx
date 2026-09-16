@@ -624,8 +624,8 @@ const Contact = () => {
             <h3 className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none mb-8 max-w-2xl">
               READY TO STEP <br /> UP YOUR GAME?
             </h3>
-            <p className="text-white/80 text-lg md:text-xl max-w-md mb-12 font-medium">
-              Connect with our team to organize events, join the club, or explore career opportunities.
+            <p className="text-white/80 text-lg md:text-xl max-w-3xl mb-12 font-medium">
+              The Pad is a place to play, move and belong. Bringing together pickleball and padel in a premium, covered setting, it combines world-class court infrastructure, on-court support and a relaxed café and lounge. Whether you’re here to compete, play your first game or unwind with friends, The Pad makes every visit feel effortless.
             </p>
             <button
               onClick={scrollToForm}
