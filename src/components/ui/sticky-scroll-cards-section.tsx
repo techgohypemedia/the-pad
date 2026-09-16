@@ -47,7 +47,7 @@ const darkCard = {
     "https://i.postimg.cc/wv5b5bCt/Bottom-Banner-Horizontal.jpg",
     // "https://i.postimg.cc/CLRzJvdN/cr4.jpg",
     "https://i.postimg.cc/sxv7fM9k/Bottom-Banner-Horizontal-2.jpg",
-    "https://i.postimg.cc/Z5TY2V5F/cr5.jpg",
+    "/assets/cr5.jpeg",
   ],
   thumbImage:
     "https://i.postimg.cc/nhKSWGPL/cr3.jpg",

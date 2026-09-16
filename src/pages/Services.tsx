@@ -112,7 +112,7 @@ const Services = () => {
   const services = [
     {
       title: "Padel Courts",
-      image: "https://i.postimg.cc/xCBKNGNh/cr5.jpg",
+      image: "/assets/cr5.jpeg",
       badge: "OFFICIAL WPT TURF",
       tagline: "World Padel Tour Quality Padel Courts",
       description: "world padel tour quality padel courts - Mondo, Official turf of WPT",

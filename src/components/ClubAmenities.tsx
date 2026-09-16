@@ -71,7 +71,7 @@ const ClubAmenities = () => {
             OUR CLUB
           </h2>
           <p className="max-w-4xl text-center leading-relaxed font-medium" style={{ color: 'rgba(240,236,226,0.65)', fontSize: '1.05rem', fontFamily: 'sans-serif' }}>
-            The Pad is Delhi’s premier destination for Padel and Pickleball. Designed for athletes, beginners, and communities, our facility in Gulmohar Park combines world-class courts with a vibrant social atmosphere.
+            The Pad is a place to play, move and belong. Bringing together pickleball and padel in a premium, covered setting, it combines world-class court infrastructure, on-court support and a relaxed café and lounge. Whether you’re here to compete, play your first game or unwind with friends, The Pad makes every visit feel effortless.
           </p>
         </div>
 
