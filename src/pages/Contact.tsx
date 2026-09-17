@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence, useSpring } from "motion/react";
-import { Mail, MapPin, ArrowRight, Instagram, Linkedin, Phone, X, ChevronLeft, ChevronRight, Star, Check } from "lucide-react";
+import { Mail, MapPin, ArrowRight, Instagram, Linkedin, Phone, X, ChevronLeft, ChevronRight, ChevronDown, Star, Check } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 /**
@@ -428,20 +428,37 @@ const Contact = () => {
                   </div>
 
                   <div className="space-y-1">
-                    <div className={`border-b-[1px] transition-all text-black ${errors.service ? 'border-red-500' : 'border-black/20 focus-within:border-black'}`}>
+                    <div className="relative w-full">
                       <select
-                        className="w-full bg-transparent pt-4 pb-1 px-0 outline-none text-base font-bold text-black/40 placeholder:uppercase placeholder:tracking-widest appearance-none cursor-pointer"
+                        className={`w-full appearance-none cursor-pointer rounded-[8px] border transition-all duration-200 ease-in-out outline-none py-[15px] pl-[18px] pr-[44px] bg-[#F8F7F4] hover:bg-[#FFFFFF] focus:bg-[#FFFFFF] ${
+                          errors.service
+                            ? 'border-red-500'
+                            : 'border-[#D8D4CC] hover:border-[#A79A82] focus:border-[#8C7A5B]'
+                        } focus:shadow-[0_0_0_3px_rgba(140,122,91,0.10)] ${
+                          !formData.service
+                            ? 'text-[#6B6862] text-[13px] md:text-[14px] font-semibold tracking-[0.08em] uppercase'
+                            : 'text-[#1C1C1C] text-[15px] md:text-[16px] font-medium tracking-normal'
+                        }`}
                         value={formData.service}
                         onChange={(e) => {
                           setFormData({ ...formData, service: e.target.value });
                           if (errors.service) setErrors({ ...errors, service: '' });
                         }}
                       >
-                        <option value="" disabled>SELECT SERVICE</option>
-                        <option value="Padel Courts">Padel Courts</option>
-                        <option value="Pickleball Courts">Pickleball Courts</option>
-                        <option value="General Inquiry">General Inquiry</option>
+                        <option value="" disabled className="bg-white text-[#6B6862] py-2 font-semibold">
+                          SELECT SERVICE
+                        </option>
+                        <option value="Padel Courts" className="bg-white text-[#1C1C1C] py-2 font-medium">
+                          Padel Courts
+                        </option>
+                        <option value="Pickleball Courts" className="bg-white text-[#1C1C1C] py-2 font-medium">
+                          Pickleball Courts
+                        </option>
+                        <option value="General Inquiry" className="bg-white text-[#1C1C1C] py-2 font-medium">
+                          General Inquiry
+                        </option>
                       </select>
+                      <ChevronDown className="absolute right-[18px] top-1/2 -translate-y-1/2 w-4 h-4 text-[#6B6862] pointer-events-none transition-transform duration-200" />
                     </div>
                     <AnimatePresence>
                       {errors.service && (
