@@ -1,5 +1,5 @@
+import React, { useState, useEffect } from "react";
 import { motion } from "motion/react";
-import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
@@ -26,7 +26,7 @@ const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
   
-  const pagesWithHero = ["/", "/contact", "/clubs", "/services", "/our-story"];
+  const pagesWithHero = ["/", "/contact", "/services", "/our-story"];
   const isTransparentPage = pagesWithHero.includes(location.pathname);
 
   const handleNavClick = (e: React.MouseEvent, link: typeof navLinks[0]) => {

@@ -154,7 +154,13 @@ const GreenCTASection = () => {
   );
 };
 
-const Services = () => {
+const Clubs = () => {
+  // Page commented out
+  return null;
+};
+
+/*
+const ClubsContent = () => {
   const horizontalReveal = {
     hidden: { clipPath: "inset(0 100% 0 0)", opacity: 0 },
     visible: {
@@ -166,7 +172,7 @@ const Services = () => {
 
   return (
     <div className="min-h-screen flex flex-col text-black font-sans bg-white overflow-x-hidden">
-      {/* Hero Section */}
+      {-- Hero Section --}
       <section className="relative w-full min-h-[75vh] md:min-h-[85vh] flex items-center justify-center overflow-hidden pt-28 md:pt-36 pb-12">
         <img
           src="https://images.unsplash.com/photo-1646649853517-e2f75cde1908?q=80&w=2070&auto=format&fit=crop"
@@ -195,7 +201,7 @@ const Services = () => {
         </motion.div>
       </section>
 
-      {/* Intro Text */}
+      {-- Intro Text --}
       <section className="bg-white px-6 py-16 md:py-20 text-center">
         <motion.p
           variants={horizontalReveal}
@@ -210,7 +216,7 @@ const Services = () => {
         </motion.p>
       </section>
 
-      {/* Club Sections */}
+      {-- Club Sections --}
       <section className="bg-white">
         <div className="grid grid-cols-1 md:grid-cols-2 min-h-[500px] md:min-h-[600px]">
           <motion.div
@@ -309,9 +315,10 @@ const Services = () => {
         </div>
       </section>
 
-      {/* <GreenCTASection /> */}
+      {-- <GreenCTASection /> --}
     </div>
   );
 };
+*/
 
-export default Services;
+export default Clubs;

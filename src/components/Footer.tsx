@@ -54,7 +54,7 @@ const Footer = () => {
             <ul className="flex flex-col gap-5 text-[11px] uppercase tracking-[0.35em] font-bold text-white/80" style={{ fontFamily: "'Poppins', sans-serif" }}>
               <li className="text-white/40 mb-2">Explore</li>
               <li><Link to="/services" className="hover:text-reserve-accent cursor-pointer transition-colors block">Our Services</Link></li>
-              <li><Link to="/clubs" className="hover:text-reserve-accent cursor-pointer transition-colors block">Our Clubs</Link></li>
+              {/* <li><Link to="/clubs" className="hover:text-reserve-accent cursor-pointer transition-colors block">Our Clubs</Link></li> */}
               <li><Link to="/our-story" className="hover:text-reserve-accent cursor-pointer transition-colors block">Our Story</Link></li>
               <li 
                 onClick={() => window.open("https://hudle.in/venues/the-pad-gulmohar-club/267531", "_blank")}
