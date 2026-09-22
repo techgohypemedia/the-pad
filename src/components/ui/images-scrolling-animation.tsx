@@ -7,15 +7,15 @@ import { useRef } from "react"
 const projects = [
   {
     title: "Private Lesson 1",
-    src: "https://images.unsplash.com/photo-1626224580175-340ad0e3a766?q=80&w=2070&auto=format&fit=crop",
+    src: "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=2070&auto=format&fit=crop",
   },
   {
     title: "Private Lesson 2",
-    src: "https://images.unsplash.com/photo-1626224580113-167812239454?q=80&w=2070&auto=format&fit=crop",
+    src: "https://images.unsplash.com/photo-1646649853517-e2f75cde1908?q=80&w=2070&auto=format&fit=crop",
   },
   {
     title: "Private Lesson 3",
-    src: "https://images.unsplash.com/photo-1626224580211-580630790938?q=80&w=2070&auto=format&fit=crop",
+    src: "https://images.unsplash.com/photo-1619410283995-43d9134e7656?q=80&w=2940&auto=format&fit=crop",
   },
 ]
 

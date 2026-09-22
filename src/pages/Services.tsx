@@ -158,7 +158,7 @@ const Services = () => {
       <section ref={heroRef} className="relative min-h-[85vh] w-full flex flex-col items-center justify-center overflow-hidden pt-28 md:pt-36 pb-12">
         <motion.div style={{ y, opacity }} className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1592910129841-3b8d1b1f092b?q=80&w=2070&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=2070&auto=format&fit=crop"
             alt="Sports Infrastructure"
             className="w-full h-full object-cover grayscale brightness-50 contrast-125 scale-105"
           />
@@ -291,7 +291,7 @@ const Services = () => {
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105"
                   />
                   <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent z-10" />
                 </div>

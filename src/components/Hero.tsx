@@ -33,7 +33,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="text-reserve-accent text-[10px] md:text-xs uppercase tracking-[0.5em] mb-4 font-bold"
         >
-          India's premier Padel and Pickleball Destination
+          India's Premier Padel & Pickleball Destination
         </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 30 }}

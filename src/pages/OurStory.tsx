@@ -14,10 +14,13 @@ const OurStory = () => {
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           className="w-full"
         >
-          <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-[5.5rem] font-bold uppercase tracking-[-0.04em] leading-[1.0] md:leading-[0.9] mb-4 md:mb-6 flex flex-col items-center">
-            <span>India's premier destination for</span>
-            <span>Padel and Pickleball</span>
+          <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-[5.5rem] font-bold uppercase tracking-[-0.04em] leading-[1.0] md:leading-[0.9] mb-4 md:mb-6 flex flex-col items-center text-center">
+            <span>India's Premier Padel & Pickleball Destination</span>
           </h1>
+
+          <h3 className="text-lg sm:text-2xl md:text-3xl font-medium tracking-wide text-reserve-accent mb-6 md:mb-8 uppercase">
+            More than a court. A new sports culture.
+          </h3>
 
           <motion.div
             initial={{ opacity: 0 }}
@@ -26,7 +29,10 @@ const OurStory = () => {
             className="max-w-4xl mx-auto space-y-4 md:space-y-6"
           >
             <p className="text-sm sm:text-base md:text-lg text-white/70 leading-relaxed font-medium">
-              The Pad is pioneering a new sports culture across India by creating players, fans, and communities. Featuring world-class Padel and Pickleball courts across locations, this community built on and around the court showcases the world’s newest, most exciting games. Through our clubs and tournaments in Delhi, Goa, Indore, and upcoming destinations, The Pad is driving India’s Padel and Pickleball revolution.
+              The Pad is building India’s next generation of racquet-sport communities, bringing together world-class padel and pickleball courts, players, tournaments, and experiences.
+            </p>
+            <p className="text-sm sm:text-base md:text-lg text-white/70 leading-relaxed font-medium">
+              From Delhi and Goa to Indore and the destinations ahead, The Pad is creating spaces where people come to play, compete, connect, and belong.
             </p>
           </motion.div>
         </motion.div>
