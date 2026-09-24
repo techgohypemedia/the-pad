@@ -23,10 +23,9 @@ const ParallaxImageSection = () => {
           className="absolute inset-0 z-0 h-full w-full"
         >
           <img
-            src="https://images.unsplash.com/photo-1646649853517-e2f75cde1908?q=80&w=2070&auto=format&fit=crop"
+            src="/assets/court-shadows.jpg"
             alt="The Pad Community"
             className="w-full h-full object-cover opacity-70"
-            referrerPolicy="no-referrer"
           />
         </motion.div>
 
