@@ -6,7 +6,7 @@ const Footer = () => {
       {/* Background Image Layer - Restored to original shade/color */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://i.postimg.cc/yNqdxTvs/Whats-App-Image-2026-03-12-at-4-42-04-PM.jpg"
+          src="/assets/footer-bg.png"
           alt="Footer Background"
           className="w-full h-full object-cover opacity-60"
         />
