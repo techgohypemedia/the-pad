@@ -38,9 +38,9 @@ const creamCard = {
 
 const darkCard = {
   subtitle: "SOCIAL & ADDICTIVE",
-  title: "PICKLEBALL SOCIALS",
+  title: "THE PAD SOCIAL",
   description:
-    "Experience the fastest growing sport in a social environment. Our pickleball sessions are perfect for meeting new people and staying active in the heart of Delhi.",
+    "Pickleball, good energy, and a community that keeps you coming back. Meet new players, get on court, and experience the social side of the game at The Pad.",
   buttonLabel: "Join Our Community",
   images: [
     // "https://i.postimg.cc/HW9hBgVC/cr1.jpg",
