@@ -2,21 +2,28 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer id="contact" className="relative bg-black text-white pt-32 pb-16 px-6 md:px-12 border-t border-white/10 overflow-hidden">
-      {/* Background Image Layer - Restored to original shade/color */}
-      <div className="absolute inset-0 z-0">
+    <footer id="contact" className="relative bg-black text-white pt-16 md:pt-32 pb-12 md:pb-16 px-6 md:px-12 border-t border-white/10 overflow-hidden">
+      {/* Background Image Layer - Mobile & Desktop tailored court photos */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        {/* Mobile View Image */}
+        <img
+          src="/assets/footer-bg-mobile.jpg"
+          alt="Footer Background Mobile"
+          className="block md:hidden w-full h-full object-cover object-center opacity-60"
+        />
+        {/* Desktop View Image */}
         <img
           src="/assets/footer-bg.jpg"
-          alt="Footer Background"
-          className="w-full h-full object-cover opacity-60"
+          alt="Footer Background Desktop"
+          className="hidden md:block w-full h-full object-cover object-center opacity-60"
         />
-        {/* Subtle gradient to ensure text remains readable without washing out the image colors */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+        {/* Subtle gradient overlay to ensure text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent pointer-events-none" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 lg:gap-24 mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-24 mb-12 lg:mb-24">
 
           {/* Left Section: Logo */}
           <div className="flex flex-col items-start">
