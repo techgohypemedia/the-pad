@@ -252,6 +252,16 @@ const Services = () => {
             <div className="text-2xl font-black italic tracking-tighter uppercase">Mondo Turf</div>
             <div className="text-2xl font-black italic tracking-tighter uppercase">Laykold</div>
             <div className="text-2xl font-black italic tracking-tighter uppercase">Sky Padel</div>
+            <img 
+              src="/assets/franklin-logo.png" 
+              alt="Franklin Sports" 
+              className="h-8 md:h-10 w-auto object-contain"
+            />
+            <img 
+              src="/assets/babolat-logo.png" 
+              alt="Babolat" 
+              className="h-7 md:h-9 w-auto object-contain"
+            />
           </div>
         </div>
       </section>
