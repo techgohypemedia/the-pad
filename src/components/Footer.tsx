@@ -49,7 +49,7 @@ const Footer = () => {
                     Delhi</span>
                   <p className="text-[13px] text-white/90 leading-relaxed uppercase tracking-widest font-medium">
 
-                    <a href="mailto:info@thepad.in" className="hover:text-reserve-accent transition-colors">info@thepad.in</a>
+                    <a href="mailto:Info@thepad.co.in" className="hover:text-reserve-accent transition-colors">Info@thepad.co.in</a>
                   </p>
                 </div>
               </div>

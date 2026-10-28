@@ -275,8 +275,8 @@ const Contact = () => {
 
               <div className="space-y-1">
                 <h4 className="text-[10px] uppercase tracking-[0.4em] font-black text-black/40">Email</h4>
-                <a href="mailto:info@thepad.in" className="text-lg md:text-xl font-medium underline block hover:opacity-70 transition-opacity">
-                  info@thepad.in
+                <a href="mailto:Info@thepad.co.in" className="text-lg md:text-xl font-medium underline block hover:opacity-70 transition-opacity">
+                  Info@thepad.co.in
                 </a>
               </div>
 
